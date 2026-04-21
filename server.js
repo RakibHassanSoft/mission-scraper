@@ -1,4 +1,3 @@
-require("dotenv").config();
 
 const express = require("express");
 const cors = require("cors");
@@ -10,6 +9,8 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
+process.env.PUPPETEER_CACHE_DIR = "/opt/render/.cache/puppeteer";
+require("dotenv").config();
 
 // DB connection
 connectDB();
