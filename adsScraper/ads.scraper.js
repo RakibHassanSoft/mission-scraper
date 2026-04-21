@@ -39,6 +39,7 @@ const startScraping = async (targetUrl) => {
 
     browserInstance = await puppeteer.launch({
       headless: "new",
+      executablePath: process.env.PUPPETEER_EXECUTABLE_PATH || undefined,
       args: [
         "--no-sandbox",
         "--disable-setuid-sandbox",
